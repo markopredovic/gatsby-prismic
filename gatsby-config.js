@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,11 +34,19 @@ module.exports = {
       // - Change the injection order
       // - Add the plugin
       options: {
-        // stylesProvider: {
-        //   injectFirst: true,
-        // },
+        stylesProvider: {
+          injectFirst: true,
+        },
       },
-      // 'gatsby-plugin-styled-components',
+    },
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'Markoni',
+        schemas: {
+          landing_page: require('./src/schemas/landing_page.json'),
+        },
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

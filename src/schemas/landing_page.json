@@ -1,0 +1,197 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "sku",
+        "placeholder": "page title"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "banner": [],
+          "home_services": [],
+          "services": [],
+          "sales_growth": []
+        },
+        "choices": {
+          "banner": {
+            "type": "Slice",
+            "fieldset": "banner",
+            "description": "Landing page banner",
+            "icon": "camera_alt",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "banner_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "banner image"
+                }
+              },
+              "banner_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "banner title",
+                  "placeholder": "banner title"
+                }
+              },
+              "banner_subtitle": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading4",
+                  "label": "banner subtitle",
+                  "placeholder": "banner subtitle"
+                }
+              },
+              "banner_text": {
+                "type": "Text",
+                "config": {
+                  "label": "banner text",
+                  "placeholder": "banner text"
+                }
+              }
+            }
+          },
+          "home_services": {
+            "type": "Slice",
+            "fieldset": "features",
+            "description": "Features",
+            "icon": "account_balance_wallet",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "feature_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "feature image"
+                }
+              },
+              "feature_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3, heading4",
+                  "label": "feature title",
+                  "placeholder": "feature title"
+                }
+              },
+              "feature_description": {
+                "type": "Text",
+                "config": {
+                  "label": "feature description",
+                  "placeholder": "short feature description"
+                }
+              }
+            }
+          },
+          "services": {
+            "type": "Slice",
+            "fieldset": "services",
+            "description": "Our services",
+            "icon": "adb",
+            "display": "list",
+            "non-repeat": {
+              "services_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "services image"
+                }
+              },
+              "services_subtitle": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "services subtitle",
+                  "placeholder": "subtitle"
+                }
+              },
+              "services_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "services title",
+                  "placeholder": "title"
+                }
+              },
+              "services_description": {
+                "type": "Text",
+                "config": {
+                  "label": "services description",
+                  "placeholder": "short services introduction"
+                }
+              }
+            },
+            "repeat": {
+              "service_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "service title",
+                  "placeholder": "service title"
+                }
+              },
+              "service_description": {
+                "type": "Text",
+                "config": {
+                  "label": "service description",
+                  "placeholder": "service description"
+                }
+              }
+            }
+          },
+          "sales_growth": {
+            "type": "Slice",
+            "fieldset": "Sales growth",
+            "description": "Sales growth service",
+            "icon": "airport_shuttle",
+            "display": "list",
+            "non-repeat": {
+              "sales_subtitle": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "sales subtitle",
+                  "placeholder": "subtitle"
+                }
+              },
+              "sales_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "sales title",
+                  "placeholder": "title"
+                }
+              },
+              "sales_description": {
+                "type": "Text",
+                "config": {
+                  "label": "sales description",
+                  "placeholder": "description"
+                }
+              },
+              "sales_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "sales image"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}
