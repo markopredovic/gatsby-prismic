@@ -47,7 +47,7 @@ const Header = () => {
 
   return (
     <AppBar color="default" position="sticky">
-      <Container id="home">
+      <Container>
         <Toolbar
           css={css`
             justify-content: space-between;

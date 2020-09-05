@@ -7,6 +7,7 @@ import Banner from '../components/Banner'
 import Features from '../components/Features'
 import Services from '../components/Services'
 import Sales from '../components/Sales'
+import Pricing from '../components/Pricing'
 
 const IndexPage = ({ data }) => {
   console.log('data', data)
@@ -46,6 +47,13 @@ const IndexPage = ({ data }) => {
       data.homeSales.edges[0].node.data.body[3].primary.sales_description,
   }
 
+  const pricingData = {
+    title: data.homePricing.edges[0].node.data.body[4].primary.title.text,
+    description:
+      data.homePricing.edges[0].node.data.body[4].primary.description,
+    items: data.homePricing.edges[0].node.data.body[4].items,
+  }
+
   return (
     <Layout>
       <Container>
@@ -60,6 +68,9 @@ const IndexPage = ({ data }) => {
         </Box>
         <Box mb={8} id="sales">
           <Sales sales={salesData} />
+        </Box>
+        <Box mb={8} id="pricing">
+          <Pricing pricing={pricingData} />
         </Box>
       </Container>
     </Layout>
@@ -178,6 +189,34 @@ export const PageQuery = graphql`
                   sales_title {
                     text
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    homePricing: allPrismicLandingPage {
+      edges {
+        node {
+          data {
+            body {
+              ... on PrismicLandingPageBodyPricing {
+                id
+                primary {
+                  description
+                  title {
+                    text
+                  }
+                }
+                items {
+                  description
+                  price
+                  price_option_type
+                  core_business_system
+                  customized_features
+                  dual_infrastructure
+                  team_management
                 }
               }
             }

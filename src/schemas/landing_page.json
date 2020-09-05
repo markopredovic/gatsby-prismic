@@ -15,7 +15,8 @@
           "banner": [],
           "home_services": [],
           "services": [],
-          "sales_growth": []
+          "sales_growth": [],
+          "pricing": []
         },
         "choices": {
           "banner": {
@@ -189,6 +190,87 @@
               }
             },
             "repeat": {}
+          },
+          "pricing": {
+            "type": "Slice",
+            "fieldset": "Pricing",
+            "description": "Pricing options",
+            "icon": "android",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Title",
+                  "placeholder": "title"
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": "short description"
+                }
+              }
+            },
+            "repeat": {
+              "price_option_type": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "basic",
+                    "growth",
+                    "corporate"
+                  ],
+                  "default_value": "basic",
+                  "label": "Price option type",
+                  "placeholder": "price type"
+                }
+              },
+              "price": {
+                "type": "Number",
+                "config": {
+                  "label": "price",
+                  "placeholder": "price"
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "description",
+                  "placeholder": "description"
+                }
+              },
+              "core_business_system": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": true,
+                  "label": "Core Business System"
+                }
+              },
+              "team_management": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": true,
+                  "label": "Team management"
+                }
+              },
+              "dual_infrastructure": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": false,
+                  "label": "Dual infrastructure"
+                }
+              },
+              "customized_features": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": false,
+                  "label": "Customized Features"
+                }
+              }
+            }
           }
         }
       }
