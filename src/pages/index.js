@@ -60,16 +60,16 @@ const IndexPage = ({ data }) => {
         <Box mb={8} id="banner">
           <Banner {...bannerData} />
         </Box>
-        <Box mb={8} id="features">
+        <Box py={6} id="features">
           <Features features={featuresData} />
         </Box>
-        <Box mb={8} id="services">
+        <Box py={6} id="services">
           <Services services={servicesData} />
         </Box>
-        <Box mb={8} id="sales">
+        <Box py={6} id="sales">
           <Sales sales={salesData} />
         </Box>
-        <Box mb={8} id="pricing">
+        <Box py={6} id="pricing">
           <Pricing pricing={pricingData} />
         </Box>
       </Container>

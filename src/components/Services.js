@@ -16,11 +16,11 @@ const ContentBox = styled(Box)`
     margin-bottom: 1.5rem;
   }
   h3 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: center;
   }
   > p {
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
     text-align: center;
   }
 `

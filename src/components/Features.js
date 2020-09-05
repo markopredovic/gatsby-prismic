@@ -7,6 +7,7 @@ import FeatureItem from './FeatureItem'
 
 const FeatureBox = styled(Box)`
   ${({ theme }) => ({
+    '&:last-child': { marginBottom: '0' },
     [theme.breakpoints.up('sm')]: {
       width: '50%',
     },

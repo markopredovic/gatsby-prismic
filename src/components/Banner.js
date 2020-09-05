@@ -10,13 +10,14 @@ import BigTitle from './UI/BigTitle'
 const ContentBox = styled(Box)`
   h6 {
     margin-bottom: 1rem;
+    text-align: center;
   }
   h3 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: center;
   }
   p {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     text-align: center;
   }
 `
@@ -29,7 +30,7 @@ const Banner = ({ image, title, subtitle, text }) => {
       justifyContent={{ sm: 'space-between' }}
       alignItems="center"
     >
-      <Box width={{ xs: '1', sm: '45%' }}>
+      <Box width={{ xs: '1', sm: '45%' }} mb={2}>
         <Img fluid={image.fluid} alt={image.alt} />
       </Box>
       <ContentBox
