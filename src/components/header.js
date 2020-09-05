@@ -8,24 +8,20 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Collapse from '@material-ui/core/Collapse'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
-import {
-  Box,
-  Container,
-  makeStyles,
-  List,
-  ListItem,
-  ListItemText,
-} from '@material-ui/core'
+import styled from '@emotion/styled'
+import { Box, Container, makeStyles, Button } from '@material-ui/core'
+import Menu from './Menu'
 
 const useStyles = makeStyles({
-  listItem: {
-    textAlign: 'center',
+  listItem: { textAlign: 'center' },
+  mainList: { marginBottom: '1rem' },
+  desktopList: {
+    display: 'flex',
+    marginRight: '1rem',
   },
 })
 
-function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />
-}
+const DesktopMenu = styled(Box)``
 
 const Header = () => {
   const classes = useStyles()
@@ -35,7 +31,7 @@ const Header = () => {
     query {
       logoImage: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fixed(width: 100, quality: 100) {
+          fixed(width: 120, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -56,30 +52,45 @@ const Header = () => {
           <Box>
             <Img fixed={data.logoImage.childImageSharp.fixed} alt="logo" />
           </Box>
-          <Box>
+          <DesktopMenu display={{ xs: 'none', md: 'flex' }} alignItems="center">
+            <Menu
+              component="nav"
+              aria-label="desktop"
+              className={classes.desktopList}
+            />
+            <Button variant="contained" color="primary">
+              Signup
+            </Button>
+          </DesktopMenu>
+          <Box display={{ xs: 'inherit', md: 'none' }}>
             <IconButton
               edge="start"
               color="inherit"
               aria-label="menu"
               onClick={toggleMenu}
             >
-              <MenuIcon />
+              <MenuIcon
+                css={css`
+                  font-size: 3.4rem;
+                `}
+              />
             </IconButton>
           </Box>
         </Toolbar>
-        <Collapse in={opened}>
-          <List component="nav" aria-label="main" className={classes.mainList}>
-            <ListItemLink href="#home">
-              <ListItemText primary="Home" className={classes.listItem} />
-            </ListItemLink>
-            <ListItemLink href="#services">
-              <ListItemText primary="Services" className={classes.listItem} />
-            </ListItemLink>
-            <ListItemLink href="#pricing">
-              <ListItemText primary="Pricing" className={classes.listItem} />
-            </ListItemLink>
-          </List>
-        </Collapse>
+        <Box display={{ xs: 'block', md: 'none' }}>
+          <Collapse in={opened}>
+            <Menu
+              component="nav"
+              aria-label="main"
+              className={classes.mainList}
+            />
+            <Box mb={2} display="flex" justifyContent="center">
+              <Button variant="contained" color="primary">
+                Signup
+              </Button>
+            </Box>
+          </Collapse>
+        </Box>
       </Container>
     </AppBar>
   )
