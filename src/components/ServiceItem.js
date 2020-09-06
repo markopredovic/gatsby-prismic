@@ -40,7 +40,7 @@ const ServiceAccordion = styled(Accordion)`
   })}
 `
 
-const ServiceItem = ({ service_description, service_title }) => {
+const ServiceItem = ({ service_description, service_title, index }) => {
   const theme = useTheme()
 
   return (
@@ -48,8 +48,8 @@ const ServiceItem = ({ service_description, service_title }) => {
       <ServiceAccordion theme={theme}>
         <AccordionSummary
           expandIcon={<AddIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
+          aria-controls={`panel${index}a-content`}
+          id={`panel${index}a-header`}
         >
           <Typography variant="h5">{service_title.text}</Typography>
         </AccordionSummary>

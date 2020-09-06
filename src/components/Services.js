@@ -30,7 +30,7 @@ const Services = ({ services }) => {
 
   const servicesList = services.items.map((service, i) => (
     <Box key={i} mb={2}>
-      <ServiceItem {...service} />
+      <ServiceItem {...service} index={i} />
     </Box>
   ))
 

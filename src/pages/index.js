@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import SEO from '../components/seo'
 import { Container, Box } from '@material-ui/core'
 
 import Layout from '../components/layout'
@@ -63,6 +64,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Gatsby, Prismic, Material UI" />
       <Container>
         <Box mb={8} id="banner">
           <Banner {...bannerData} />
