@@ -16,7 +16,8 @@
           "home_services": [],
           "services": [],
           "sales_growth": [],
-          "pricing": []
+          "pricing": [],
+          "clients": []
         },
         "choices": {
           "banner": {
@@ -268,6 +269,41 @@
                 "config": {
                   "default_value": false,
                   "label": "Customized Features"
+                }
+              }
+            }
+          },
+          "clients": {
+            "type": "Slice",
+            "fieldset": "Clients",
+            "description": "Clients showcase",
+            "icon": "bluetooth_connected",
+            "display": "list",
+            "non-repeat": {
+              "subtitle": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Subtitle",
+                  "placeholder": "subtitle"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Title",
+                  "placeholder": "title"
+                }
+              }
+            },
+            "repeat": {
+              "client_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "client image"
                 }
               }
             }

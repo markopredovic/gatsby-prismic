@@ -8,6 +8,7 @@ import Features from '../components/Features'
 import Services from '../components/Services'
 import Sales from '../components/Sales'
 import Pricing from '../components/Pricing'
+import Clients from '../components/Clients'
 
 const IndexPage = ({ data }) => {
   console.log('data', data)
@@ -54,6 +55,12 @@ const IndexPage = ({ data }) => {
     items: data.homePricing.edges[0].node.data.body[4].items,
   }
 
+  const clientsData = {
+    title: data.homeClients.edges[0].node.data.body[5].primary.title.text,
+    subtitle: data.homeClients.edges[0].node.data.body[5].primary.subtitle.text,
+    items: data.homeClients.edges[0].node.data.body[5].items,
+  }
+
   return (
     <Layout>
       <Container>
@@ -71,6 +78,9 @@ const IndexPage = ({ data }) => {
         </Box>
         <Box py={6} id="pricing">
           <Pricing pricing={pricingData} />
+        </Box>
+        <Box py={6} id="clients">
+          <Clients clients={clientsData} />
         </Box>
       </Container>
     </Layout>
@@ -217,6 +227,34 @@ export const PageQuery = graphql`
                   customized_features
                   dual_infrastructure
                   team_management
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    homeClients: allPrismicLandingPage {
+      edges {
+        node {
+          data {
+            body {
+              ... on PrismicLandingPageBodyClients {
+                id
+                primary {
+                  subtitle {
+                    text
+                  }
+                  title {
+                    text
+                  }
+                }
+                items {
+                  client_image {
+                    fluid {
+                      ...GatsbyPrismicImageFluid
+                    }
+                  }
                 }
               }
             }
