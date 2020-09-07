@@ -10,6 +10,7 @@ import PropTypes from 'prop-types'
 import Box from '@material-ui/core/Box'
 
 import Header from './header'
+import Footer from './footer'
 
 if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require
@@ -23,6 +24,7 @@ const Layout = ({ children }) => {
       <Box py={6}>
         <main>{children}</main>
       </Box>
+      <Footer />
     </div>
   )
 }

@@ -404,5 +404,108 @@
         }
       }
     }
+  },
+  "footer": {
+    "footer_logo": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "footer logo"
+      }
+    },
+    "footer_description": {
+      "type": "Text",
+      "config": {
+        "label": "footer description",
+        "placeholder": "footer description"
+      }
+    },
+    "about_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "about title",
+        "placeholder": "title"
+      }
+    },
+    "about_description": {
+      "type": "Text",
+      "config": {
+        "label": "about description",
+        "placeholder": "description"
+      }
+    },
+    "contact_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "contact title",
+        "placeholder": "title"
+      }
+    },
+    "contacts": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "contact_type": {
+            "type": "Select",
+            "config": {
+              "options": [
+                "address",
+                "phone",
+                "email"
+              ],
+              "label": "contact type",
+              "placeholder": "type"
+            }
+          },
+          "contact_text": {
+            "type": "Text",
+            "config": {
+              "label": "contact text",
+              "placeholder": "text"
+            }
+          }
+        },
+        "label": "contacts"
+      }
+    },
+    "social_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "social title",
+        "placeholder": "title"
+      }
+    },
+    "social_media": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "social_type": {
+            "type": "Select",
+            "config": {
+              "options": [
+                "twitter",
+                "instagram",
+                "facebook",
+                "linkedin"
+              ],
+              "label": "social type",
+              "placeholder": "type"
+            }
+          },
+          "social_url": {
+            "type": "Text",
+            "config": {
+              "label": "social url",
+              "placeholder": "url"
+            }
+          }
+        },
+        "label": "social media"
+      }
+    }
   }
 }
