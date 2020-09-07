@@ -11,6 +11,7 @@ import Sales from '../components/Sales'
 import Pricing from '../components/Pricing'
 import Clients from '../components/Clients'
 import News from '../components/News'
+import Contact from '../components/Contact'
 
 const IndexPage = ({ data }) => {
   console.log('data', data)
@@ -68,6 +69,13 @@ const IndexPage = ({ data }) => {
     subtitle: data.homeNews.edges[0].node.data.body[6].primary.subtitle.text,
     items: data.homeNews.edges[0].node.data.body[6].items,
   }
+  const contactData = {
+    title: data.homeContact.edges[0].node.data.body[7].primary.title.text,
+    subtitle: data.homeContact.edges[0].node.data.body[7].primary.subtitle.text,
+    description:
+      data.homeContact.edges[0].node.data.body[7].primary.description,
+    image: data.homeContact.edges[0].node.data.body[7].primary.image.fluid,
+  }
 
   return (
     <Layout>
@@ -76,23 +84,26 @@ const IndexPage = ({ data }) => {
         <Box mb={8} id="banner">
           <Banner {...bannerData} />
         </Box>
-        <Box py={6} id="features">
+        <Box py={(2, 10)} id="features">
           <Features features={featuresData} />
         </Box>
-        <Box py={6} id="services">
+        <Box py={(2, 10)} id="services">
           <Services services={servicesData} />
         </Box>
-        <Box py={6} id="sales">
+        <Box py={(2, 10)} id="sales">
           <Sales sales={salesData} />
         </Box>
-        <Box py={6} id="pricing">
+        <Box py={(2, 10)} id="pricing">
           <Pricing pricing={pricingData} />
         </Box>
-        <Box py={6} id="clients">
+        <Box py={(2, 10)} id="clients">
           <Clients clients={clientsData} />
         </Box>
-        <Box py={6} id="news">
+        <Box py={(2, 10)} id="news">
           <News news={newsData} />
+        </Box>
+        <Box py={(2, 10)} id="contact">
+          <Contact contact={contactData} />
         </Box>
       </Container>
     </Layout>
@@ -299,6 +310,33 @@ export const PageQuery = graphql`
                   post_title {
                     text
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    homeContact: allPrismicLandingPage {
+      edges {
+        node {
+          data {
+            body {
+              ... on PrismicLandingPageBodyContact {
+                id
+                primary {
+                  image {
+                    fluid {
+                      ...GatsbyPrismicImageFluid
+                    }
+                  }
+                  subtitle {
+                    text
+                  }
+                  title {
+                    text
+                  }
+                  description
                 }
               }
             }

@@ -18,7 +18,8 @@
           "sales_growth": [],
           "pricing": [],
           "clients": [],
-          "news": []
+          "news": [],
+          "contact": []
         },
         "choices": {
           "banner": {
@@ -358,6 +359,47 @@
                 }
               }
             }
+          },
+          "contact": {
+            "type": "Slice",
+            "fieldset": "Contact",
+            "description": "contact form",
+            "icon": "all_out",
+            "display": "list",
+            "non-repeat": {
+              "subtitle": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "subtitle",
+                  "placeholder": "subtitle"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "title",
+                  "placeholder": "title"
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "description",
+                  "placeholder": "short description"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              }
+            },
+            "repeat": {}
           }
         }
       }
