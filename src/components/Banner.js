@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core'
+import { jsx } from '@emotion/core'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { Box, Typography, Button } from '@material-ui/core'

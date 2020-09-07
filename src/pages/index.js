@@ -10,6 +10,7 @@ import Services from '../components/Services'
 import Sales from '../components/Sales'
 import Pricing from '../components/Pricing'
 import Clients from '../components/Clients'
+import News from '../components/News'
 
 const IndexPage = ({ data }) => {
   console.log('data', data)
@@ -62,6 +63,12 @@ const IndexPage = ({ data }) => {
     items: data.homeClients.edges[0].node.data.body[5].items,
   }
 
+  const newsData = {
+    title: data.homeNews.edges[0].node.data.body[6].primary.title.text,
+    subtitle: data.homeNews.edges[0].node.data.body[6].primary.subtitle.text,
+    items: data.homeNews.edges[0].node.data.body[6].items,
+  }
+
   return (
     <Layout>
       <SEO title="Gatsby, Prismic, Material UI" />
@@ -83,6 +90,9 @@ const IndexPage = ({ data }) => {
         </Box>
         <Box py={6} id="clients">
           <Clients clients={clientsData} />
+        </Box>
+        <Box py={6} id="news">
+          <News news={newsData} />
         </Box>
       </Container>
     </Layout>
@@ -256,6 +266,38 @@ export const PageQuery = graphql`
                     fluid {
                       ...GatsbyPrismicImageFluid
                     }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    homeNews: allPrismicLandingPage {
+      edges {
+        node {
+          data {
+            body {
+              ... on PrismicLandingPageBodyNews {
+                id
+                primary {
+                  subtitle {
+                    text
+                  }
+                  title {
+                    text
+                  }
+                }
+                items {
+                  post_excerpt
+                  post_image {
+                    fluid {
+                      ...GatsbyPrismicImageFluid
+                    }
+                  }
+                  post_title {
+                    text
                   }
                 }
               }

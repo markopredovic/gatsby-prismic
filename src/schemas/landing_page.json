@@ -17,7 +17,8 @@
           "services": [],
           "sales_growth": [],
           "pricing": [],
-          "clients": []
+          "clients": [],
+          "news": []
         },
         "choices": {
           "banner": {
@@ -304,6 +305,56 @@
                   "constraint": {},
                   "thumbnails": [],
                   "label": "client image"
+                }
+              }
+            }
+          },
+          "news": {
+            "type": "Slice",
+            "fieldset": "News",
+            "description": "News",
+            "icon": "arrow_drop_down_circle",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "title",
+                  "placeholder": "title"
+                }
+              },
+              "subtitle": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Subtitle",
+                  "placeholder": "subtitle"
+                }
+              }
+            },
+            "repeat": {
+              "post_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "post image"
+                }
+              },
+              "post_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "post title",
+                  "placeholder": "title"
+                }
+              },
+              "post_excerpt": {
+                "type": "Text",
+                "config": {
+                  "label": "Post Excerpt",
+                  "placeholder": "post short descriptiom"
                 }
               }
             }
