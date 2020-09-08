@@ -5,6 +5,7 @@
  */
 
 import React from 'react'
+import './src/css/fonts.css'
 
 import { ThemeProvider, CssBaseline } from '@material-ui/core'
 import theme from './src/theme'
