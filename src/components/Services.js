@@ -7,10 +7,6 @@ import { useTheme } from '@material-ui/core/styles'
 import BigTitle from './UI/BigTitle'
 import ServiceItem from './ServiceItem'
 
-const ImageBox = styled(Box)`
-  ${({ theme }) => ({})}
-`
-
 const ContentBox = styled(Box)`
   h6 {
     margin-bottom: 1.5rem;
@@ -22,6 +18,15 @@ const ContentBox = styled(Box)`
   > p {
     margin-bottom: 3.5rem;
     text-align: center;
+  }
+
+  @media (min-width: 960px) {
+    h3 {
+      text-align: left;
+    }
+    > p {
+      text-align: left;
+    }
   }
 `
 
@@ -41,19 +46,19 @@ const Services = ({ services }) => {
       justifyContent="space-between"
       alignItems="center"
     >
-      <ImageBox
+      <Box
         theme={theme}
         mb={0}
         width={{ xs: '1', sm: '45%' }}
         order={{ xs: 1, sm: 2 }}
       >
         <Img fluid={services.mainImage} alt="services" />
-      </ImageBox>
+      </Box>
       <ContentBox
         width={{ xs: '1', sm: '50%' }}
         display="flex"
         flexDirection="column"
-        alignItems="center"
+        alignItems={{ xs: 'center', md: 'flex-start' }}
         order={{ xs: 2, sm: 1 }}
       >
         <Typography variant="subtitle1">{services.mainSubtitle}</Typography>

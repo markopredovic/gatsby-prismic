@@ -91,8 +91,10 @@ const PricingBox = ({
       display="flex"
       flexDirection="column"
       alignItems="center"
-      p={6}
-      mb={6}
+      py={{ xs: 6 }}
+      px={{ xs: 6, md: 2 }}
+      mb={{ xs: 6, md: 0 }}
+      mt={{ xs: 0, md: price_option_type !== 'growth' ? 6 : 0 }}
       width={{ xs: '1', md: '30%' }}
     >
       <PriceTypeBox

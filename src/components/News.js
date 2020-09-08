@@ -26,6 +26,7 @@ const PostBox = styled(Box)`
 
     [theme.breakpoints.up('md')]: {
       width: '30%',
+      marginBottom: '0',
     },
 
     h6: {
@@ -73,8 +74,8 @@ const News = ({ news: { title, subtitle, items } }) => {
             theme={theme}
             key={i}
             {...post}
-            px={5}
-            py={6}
+            px={{ xs: 5, md: 2 }}
+            py={{ xs: 6, md: 4 }}
             display="flex"
             flexDirection="column"
             alignItems="center"

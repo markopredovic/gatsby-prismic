@@ -8,7 +8,11 @@ const StyledBigTitle = styled(Typography)`
   font-family: 'Roboto';
   font-size: 4.6rem;
   font-weight: 600;
-  color: ${theme.palette.primary.dark}
+  color: ${theme.palette.primary.dark};
+
+  @media (min-width: 960px) {
+    font-size: 4.8rem;
+  }
 `}
 `
 

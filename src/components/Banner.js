@@ -20,6 +20,18 @@ const ContentBox = styled(Box)`
     margin-bottom: 3rem;
     text-align: center;
   }
+
+  @media (min-width: 960px) {
+    h6 {
+      text-align: left;
+    }
+    h3 {
+      text-align: left;
+    }
+    p {
+      text-align: left;
+    }
+  }
 `
 
 const Banner = ({ image, title, subtitle, text }) => {
@@ -37,7 +49,7 @@ const Banner = ({ image, title, subtitle, text }) => {
         width={{ xs: '1', sm: '50%' }}
         display="flex"
         flexDirection="column"
-        alignItems="center"
+        alignItems={{ xs: 'center', md: 'flex-start' }}
       >
         <Typography variant="subtitle1">{subtitle.text}</Typography>
         <BigTitle>{title.text}</BigTitle>

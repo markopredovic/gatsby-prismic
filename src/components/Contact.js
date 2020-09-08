@@ -17,6 +17,7 @@ import BigTitle from './UI/BigTitle'
 const WrapperBox = styled(Box)``
 
 const ContentBox = styled(Box)`
+  ${({ theme }) => `
   h6 {
     margin-bottom: 1.5rem;
   }
@@ -27,6 +28,17 @@ const ContentBox = styled(Box)`
   p {
     text-align: center;
   }
+
+  ${theme.breakpoints.up('md')} {
+    h3 {
+      text-align: left;
+    }
+    p {
+      text-align: left;
+    }
+  }
+
+`}
 `
 
 const ModalWrapper = styled(Modal)`
@@ -80,10 +92,11 @@ const Contact = ({ contact: { title, subtitle, description, image } }) => {
         <Img fluid={image} alt="contact image" />
       </Box>
       <ContentBox
+        theme={theme}
         mb={6}
         display="flex"
         flexDirection="column"
-        alignItems="center"
+        alignItems={{ xs: 'center', md: 'flex-start' }}
         width={{ xs: '1', sm: '45%' }}
         order={{ xs: 2, sm: 1 }}
       >
