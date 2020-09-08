@@ -121,21 +121,36 @@ const Footer = () => {
                 display="flex"
                 flexDirection={{ xs: 'column', sm: 'row' }}
                 flexWrap={{ cs: 'nowrap', sm: 'wrap' }}
-                px={5}
+                px={1}
               >
-                <FooterBox mb={6}>
+                <FooterBox
+                  mb={6}
+                  px={2}
+                  width={{ xs: '1', sm: '50%' }}
+                  order={{ xs: 1 }}
+                >
                   <Img fluid={footerData.footer_logo} alt="footer logo" />
                   <Typography variant="body1">
                     {footerData.footer_description}
                   </Typography>
                 </FooterBox>
-                <FooterBox mb={6}>
+                <FooterBox
+                  mb={6}
+                  px={2}
+                  width={{ xs: '1', sm: '50%' }}
+                  order={{ xs: 2, sm: 3 }}
+                >
                   <FooterTitle>{footerData.about_title}</FooterTitle>
                   <Typography variant="body1">
                     {footerData.footer_description}
                   </Typography>
                 </FooterBox>
-                <FooterBox mb={6}>
+                <FooterBox
+                  mb={6}
+                  px={2}
+                  width={{ xs: '1', sm: '50%' }}
+                  order={{ xs: 3, sm: 2 }}
+                >
                   <FooterTitle>{footerData.contact_title}</FooterTitle>
                   {footerData.contacts.map((item, i) => {
                     let icon = null
@@ -157,7 +172,11 @@ const Footer = () => {
                     )
                   })}
                 </FooterBox>
-                <FooterBox>
+                <FooterBox
+                  width={{ xs: '1', sm: '50%' }}
+                  px={2}
+                  order={{ xs: 4 }}
+                >
                   <FooterTitle>{footerData.social_title}</FooterTitle>
                   <Box display="flex">
                     {footerData.social_media.map((item, i) => {
@@ -181,7 +200,12 @@ const Footer = () => {
                   </Box>
                 </FooterBox>
               </WrapperBox>
-              <CopyrightBox py={(0, 6)}>
+              <CopyrightBox
+                pt={0}
+                pb={6}
+                display="flex"
+                justifyContent="center"
+              >
                 <Typography variant="body2">
                   &copy; {new Date(Date.now()).getFullYear()} Landing Page
                   &trade;. All Rights Reserved.
