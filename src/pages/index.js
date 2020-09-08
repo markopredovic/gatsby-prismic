@@ -14,8 +14,6 @@ import News from '../components/News'
 import Contact from '../components/Contact'
 
 const IndexPage = ({ data }) => {
-  console.log('data', data)
-
   const bannerData = {
     image: {
       fluid: data.banner.edges[0].node.data.body[0].items[0].banner_image.fluid,
@@ -84,22 +82,22 @@ const IndexPage = ({ data }) => {
         <Box mb={8} id="banner">
           <Banner {...bannerData} />
         </Box>
-        <Box pt={2} pb={10} id="features">
+        <Box pt={10} pb={2} id="features">
           <Features features={featuresData} />
         </Box>
-        <Box pt={2} pb={10} id="services">
+        <Box pt={10} pb={2} id="services">
           <Services services={servicesData} />
         </Box>
-        <Box pt={2} pb={10} id="sales">
+        <Box pt={10} pb={2} id="sales">
           <Sales sales={salesData} />
         </Box>
-        <Box pt={2} pb={10} id="pricing">
+        <Box pt={10} pb={2} id="pricing">
           <Pricing pricing={pricingData} />
         </Box>
-        <Box pt={2} pb={10} id="clients">
+        <Box pt={10} pb={2} id="clients">
           <Clients clients={clientsData} />
         </Box>
-        <Box pt={2} pb={10} id="news">
+        <Box pt={10} pb={2} id="news">
           <News news={newsData} />
         </Box>
         <Box py={(2, 10)} id="contact">

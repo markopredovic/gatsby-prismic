@@ -60,16 +60,36 @@ const theme = createMuiTheme({
         height: '51px',
         lineHeight: '51px',
         borderRadius: '30px',
+        '@media (min-width: 960px)': {
+          height: '55px',
+          lineHeight: '55px',
+        },
+        '@media (min-width: 1280px)': {
+          height: '60px',
+          lineHeight: '60px',
+        },
       },
       contained: {
         padding: '0 40px',
         fontSize: '1.8rem',
         boxShadow: 'none',
+        '@media (min-width: 960px)': {
+          fontSize: '2rem',
+        },
+        '@media (min-width: 1280px)': {
+          fontSize: '2.2rem',
+        },
       },
       label: {
         fontSize: '1.8rem',
         fontWeight: '600',
         textTransform: 'none',
+        '@media (min-width: 960px)': {
+          fontSize: '2rem',
+        },
+        '@media (min-width: 1280px)': {
+          fontSize: '2.2rem',
+        },
       },
     },
     MuiTypography: {
@@ -81,15 +101,27 @@ const theme = createMuiTheme({
         '@media (min-width: 960px)': {
           fontSize: '2.2rem',
         },
+        '@media (min-width: 1280px)': {
+          fontSize: '2.4rem',
+        },
       },
       body2: {
         fontSize: '1.6rem',
         color: grey[400],
+        '@media (min-width: 960px)': {
+          fontSize: '1.8rem',
+        },
+        '@media (min-width: 1280px)': {
+          fontSize: '2rem',
+        },
       },
       subtitle1: {
         fontSize: '2.4rem',
         '@media (min-width: 960px)': {
           fontSize: '2.6rem',
+        },
+        '@media (min-width: 1280px)': {
+          fontSize: '2.8rem',
         },
       },
     },

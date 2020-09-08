@@ -76,6 +76,16 @@ const StyledSlider = styled(Slider)`
         fontSize: '3rem',
         color: theme.palette.primary.light,
       },
+      [theme.breakpoints.up('md')]: {
+        '&:before': {
+          fontSize: '3.5rem',
+        },
+      },
+      [theme.breakpoints.up('lg')]: {
+        '&:before': {
+          fontSize: '4rem',
+        },
+      },
     },
     '.slick-prev': {
       left: '0',

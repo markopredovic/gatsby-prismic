@@ -14,8 +14,6 @@ function ListItemLink(props) {
 }
 
 const ListsTestPage = () => {
-  const handleClick = () => console.log('clicked')
-
   return (
     <Layout>
       <Typography variant="h2" component="h2" gutterBottom>
@@ -23,7 +21,7 @@ const ListsTestPage = () => {
       </Typography>
       <Box>
         <List component="nav" aria-label="main mailbox folders">
-          <ListItem button onClick={handleClick}>
+          <ListItem button>
             <ListItemText primary="Trash" />
           </ListItem>
           <ListItemLink href="#services">

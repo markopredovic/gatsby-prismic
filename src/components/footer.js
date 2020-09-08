@@ -126,7 +126,7 @@ const Footer = () => {
                 <FooterBox
                   mb={6}
                   px={2}
-                  width={{ xs: '1', sm: '50%' }}
+                  width={{ xs: '1', sm: '50%', lg: '25%' }}
                   order={{ xs: 1 }}
                 >
                   <Img fluid={footerData.footer_logo} alt="footer logo" />
@@ -137,8 +137,8 @@ const Footer = () => {
                 <FooterBox
                   mb={6}
                   px={2}
-                  width={{ xs: '1', sm: '50%' }}
-                  order={{ xs: 2, sm: 3 }}
+                  width={{ xs: '1', sm: '50%', lg: '25%' }}
+                  order={{ xs: 2, sm: 3, lg: 2 }}
                 >
                   <FooterTitle>{footerData.about_title}</FooterTitle>
                   <Typography variant="body1">
@@ -148,8 +148,8 @@ const Footer = () => {
                 <FooterBox
                   mb={6}
                   px={2}
-                  width={{ xs: '1', sm: '50%' }}
-                  order={{ xs: 3, sm: 2 }}
+                  width={{ xs: '1', sm: '50%', lg: '25%' }}
+                  order={{ xs: 3, sm: 2, lg: 3 }}
                 >
                   <FooterTitle>{footerData.contact_title}</FooterTitle>
                   {footerData.contacts.map((item, i) => {
@@ -173,7 +173,7 @@ const Footer = () => {
                   })}
                 </FooterBox>
                 <FooterBox
-                  width={{ xs: '1', sm: '50%' }}
+                  width={{ xs: '1', sm: '50%', lg: '25%' }}
                   px={2}
                   order={{ xs: 4 }}
                 >

@@ -10,8 +10,12 @@ const StyledBigTitle = styled(Typography)`
   font-weight: 600;
   color: ${theme.palette.primary.dark};
 
-  @media (min-width: 960px) {
+  {${theme.breakpoints.up('md')}} {
     font-size: 4.8rem;
+  }
+
+  {${theme.breakpoints.up('lg')}} {
+    font-size: 5rem;
   }
 `}
 `

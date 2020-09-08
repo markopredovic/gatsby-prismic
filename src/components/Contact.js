@@ -57,6 +57,12 @@ const FormWrapperBox = styled(Box)`
     outlineColor: theme.palette.primary.light,
     h6: { marginBottom: '1.5rem' },
     '.MuiFormControl-root': { marginBottom: '1.5rem', width: '100%' },
+
+    [theme.breakpoints.up('lg')]: {
+      maxWidth: '700px',
+      h6: { marginBottom: '2rem' },
+      '.MuiFormControl-root': { marginBottom: '2rem' },
+    },
   })}
 `
 
@@ -126,12 +132,12 @@ const Contact = ({ contact: { title, subtitle, description, image } }) => {
                     id="fieldName"
                     label="name"
                     variant="outlined"
-                    size={isMobile ? 'small' : 'normal'}
+                    size={isMobile ? 'small' : 'medium'}
                   />
                   <TextField
                     id="fieldEmai"
                     label="email"
-                    size={isMobile ? 'small' : 'normal'}
+                    size={isMobile ? 'small' : 'medium'}
                     variant="outlined"
                   />
                   <TextField
@@ -139,7 +145,7 @@ const Contact = ({ contact: { title, subtitle, description, image } }) => {
                     label="Message"
                     multiline
                     variant="outlined"
-                    size={isMobile ? 'small' : 'normal'}
+                    size={isMobile ? 'small' : 'medium'}
                     rows={4}
                   />
                   <Box display="flex" justifyContent="flex-end">
