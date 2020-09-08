@@ -14,6 +14,8 @@ import Fade from '@material-ui/core/Fade'
 import { useTheme } from '@material-ui/core/styles'
 import BigTitle from './UI/BigTitle'
 
+const WrapperBox = styled(Box)``
+
 const ContentBox = styled(Box)`
   h6 {
     margin-bottom: 1.5rem;
@@ -64,8 +66,17 @@ const Contact = ({ contact: { title, subtitle, description, image } }) => {
   }
 
   return (
-    <Box>
-      <Box mb={4}>
+    <WrapperBox
+      display="flex"
+      flexDirection={{ xs: 'column', sm: 'row' }}
+      alignItems="center"
+      justifyContent="space-between"
+    >
+      <Box
+        mb={{ xs: 4, sm: 0 }}
+        width={{ xs: '1', sm: '45%' }}
+        order={{ xs: 1, sm: 2 }}
+      >
         <Img fluid={image} alt="contact image" />
       </Box>
       <ContentBox
@@ -73,61 +84,63 @@ const Contact = ({ contact: { title, subtitle, description, image } }) => {
         display="flex"
         flexDirection="column"
         alignItems="center"
+        width={{ xs: '1', sm: '45%' }}
+        order={{ xs: 2, sm: 1 }}
       >
         <Typography variant="subtitle1">{subtitle}</Typography>
         <BigTitle>{title}</BigTitle>
         <Typography variant="body1">{description}</Typography>
+        <Box display="flex" flexDirection="column" alignItems="center" mt={5}>
+          <Button variant="contained" color="secondary" onClick={handleOpen}>
+            Send an Email
+          </Button>
+          <ModalWrapper
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            open={opened}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={opened}>
+              <FormWrapperBox theme={theme}>
+                <Typography variant="subtitle1">Contact us:</Typography>
+                <form onSubmit={handleSubmit}>
+                  <TextField
+                    id="fieldName"
+                    label="name"
+                    variant="outlined"
+                    size={isMobile ? 'small' : 'normal'}
+                  />
+                  <TextField
+                    id="fieldEmai"
+                    label="email"
+                    size={isMobile ? 'small' : 'normal'}
+                    variant="outlined"
+                  />
+                  <TextField
+                    id="standard-multiline-flexible"
+                    label="Message"
+                    multiline
+                    variant="outlined"
+                    size={isMobile ? 'small' : 'normal'}
+                    rows={4}
+                  />
+                  <Box display="flex" justifyContent="flex-end">
+                    <Button variant="contained" color="primary" type="submit">
+                      Send
+                    </Button>
+                  </Box>
+                </form>
+              </FormWrapperBox>
+            </Fade>
+          </ModalWrapper>
+        </Box>
       </ContentBox>
-      <Box display="flex" flexDirection="column" alignItems="center">
-        <Button variant="contained" color="secondary" onClick={handleOpen}>
-          Send an Email
-        </Button>
-        <ModalWrapper
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          open={opened}
-          onClose={handleClose}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
-          }}
-        >
-          <Fade in={opened}>
-            <FormWrapperBox theme={theme}>
-              <Typography variant="subtitle1">Contact us:</Typography>
-              <form onSubmit={handleSubmit}>
-                <TextField
-                  id="fieldName"
-                  label="name"
-                  variant="outlined"
-                  size={isMobile ? 'small' : 'normal'}
-                />
-                <TextField
-                  id="fieldEmai"
-                  label="email"
-                  size={isMobile ? 'small' : 'normal'}
-                  variant="outlined"
-                />
-                <TextField
-                  id="standard-multiline-flexible"
-                  label="Message"
-                  multiline
-                  variant="outlined"
-                  size={isMobile ? 'small' : 'normal'}
-                  rows={4}
-                />
-                <Box display="flex" justifyContent="flex-end">
-                  <Button variant="contained" color="primary" type="submit">
-                    Send
-                  </Button>
-                </Box>
-              </form>
-            </FormWrapperBox>
-          </Fade>
-        </ModalWrapper>
-      </Box>
-    </Box>
+    </WrapperBox>
   )
 }
 

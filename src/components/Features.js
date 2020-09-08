@@ -31,7 +31,7 @@ const Features = ({ features }) => {
       display="flex"
       flexDirection={{ xs: 'column', sm: 'row' }}
       flexWrap="wrap"
-      alignItems="center"
+      alignItems="flex-start"
     >
       {items}
     </Box>
