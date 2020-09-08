@@ -148,7 +148,7 @@ const Footer = () => {
                       icon = <EmailIcon />
                     }
                     return (
-                      <ContactBox display="flex" theme={theme}>
+                      <ContactBox key={i} display="flex" theme={theme}>
                         {icon}
                         <Typography variant="body1">
                           {item.contact_text}
@@ -173,7 +173,7 @@ const Footer = () => {
                         icon = <LinkedInIcon />
                       }
                       return (
-                        <SocialBox>
+                        <SocialBox key={i}>
                           <Link to={item.social_url}>{icon}</Link>
                         </SocialBox>
                       )

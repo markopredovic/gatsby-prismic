@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 import { Box, Typography, Button } from '@material-ui/core'
 import styled from '@emotion/styled'
 import BigTitle from './UI/BigTitle'
@@ -18,8 +18,15 @@ const TitleBox = styled(Box)`
 
 const PostBox = styled(Box)`
   ${({ theme }) => ({
+    width: '80%',
+    maxWidth: '400px',
+    margin: `0 auto ${theme.spacing(5)}px`,
     boxShadow: `0 0 5px 0px ${grey[300]}`,
     borderRadius: '5rem',
+
+    [theme.breakpoints.up('md')]: {
+      width: '30%',
+    },
 
     h6: {
       marginBottom: '2rem',
@@ -39,6 +46,14 @@ const PostBox = styled(Box)`
   })}
 `
 
+const StyledBackgroundImage = styled(BackgroundImage)`
+  height: 250px;
+
+  @media only screen and (min-width: 1200px) {
+    height: 300px;
+  }
+`
+
 const News = ({ news: { title, subtitle, items } }) => {
   const theme = useTheme()
 
@@ -48,13 +63,16 @@ const News = ({ news: { title, subtitle, items } }) => {
         <Typography variant="subtitle1">{subtitle}</Typography>
         <BigTitle>{title}</BigTitle>
       </TitleBox>
-      <Box>
+      <Box
+        display="flex"
+        flexDirection={{ xs: 'column', md: 'row' }}
+        justifyContent="space-between"
+      >
         {items.map((post, i) => (
           <PostBox
             theme={theme}
             key={i}
             {...post}
-            mb={5}
             px={5}
             py={6}
             display="flex"
@@ -62,7 +80,10 @@ const News = ({ news: { title, subtitle, items } }) => {
             alignItems="center"
           >
             <Box mb={5} width="1">
-              <Img fluid={post.post_image.fluid} alt="post image" />
+              <StyledBackgroundImage
+                fluid={post.post_image.fluid}
+                alt="post image"
+              />
             </Box>
             <Typography variant="subtitle2">{post.post_title.text}</Typography>
             <Typography variant="body1">{post.post_excerpt}</Typography>

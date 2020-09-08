@@ -84,22 +84,22 @@ const IndexPage = ({ data }) => {
         <Box mb={8} id="banner">
           <Banner {...bannerData} />
         </Box>
-        <Box py={(2, 10)} id="features">
+        <Box pt={2} pb={10} id="features">
           <Features features={featuresData} />
         </Box>
-        <Box py={(2, 10)} id="services">
+        <Box pt={2} pb={10} id="services">
           <Services services={servicesData} />
         </Box>
-        <Box py={(2, 10)} id="sales">
+        <Box pt={2} pb={10} id="sales">
           <Sales sales={salesData} />
         </Box>
-        <Box py={(2, 10)} id="pricing">
+        <Box pt={2} pb={10} id="pricing">
           <Pricing pricing={pricingData} />
         </Box>
-        <Box py={(2, 10)} id="clients">
+        <Box pt={2} pb={10} id="clients">
           <Clients clients={clientsData} />
         </Box>
-        <Box py={(2, 10)} id="news">
+        <Box pt={2} pb={10} id="news">
           <News news={newsData} />
         </Box>
         <Box py={(2, 10)} id="contact">

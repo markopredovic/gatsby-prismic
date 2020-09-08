@@ -9,20 +9,18 @@ import BigTitle from './UI/BigTitle'
 
 const settings = {
   dots: true,
-  className: 'center',
-  centerMode: true,
+  lazyLoad: true,
   infinite: true,
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 4,
+  initialSlide: 0,
   responsive: [
     {
       breakpoint: 960,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3,
-        infinite: true,
-        dots: true,
       },
     },
     {
@@ -36,6 +34,7 @@ const settings = {
     {
       breakpoint: 480,
       settings: {
+        dots: false,
         slidesToShow: 1,
         slidesToScroll: 1,
       },
@@ -70,6 +69,19 @@ const StyledSlider = styled(Slider)`
     '.slick-dots li.slick-active button:before': {
       color: theme.palette.primary.main,
       opacity: 1,
+    },
+    '.slick-arrow': {
+      zIndex: '9',
+      '&:before': {
+        fontSize: '3rem',
+        color: theme.palette.primary.light,
+      },
+    },
+    '.slick-prev': {
+      left: '0',
+    },
+    '.slick-next': {
+      right: '0',
     },
   })}
 `
