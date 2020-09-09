@@ -7,11 +7,11 @@ import { grey } from '@material-ui/core/colors'
 import { useTheme } from '@material-ui/core/styles'
 
 const TitleBox = styled(Box)`
-  h6 {
+  h3 {
     margin-bottom: 1.5rem;
     text-align: center;
   }
-  h3 {
+  h4 {
     text-align: center;
   }
 `
@@ -61,7 +61,9 @@ const News = ({ news: { title, subtitle, items } }) => {
   return (
     <Box>
       <TitleBox mb={6}>
-        <Typography variant="subtitle1">{subtitle}</Typography>
+        <Typography variant="subtitle1" component="h3">
+          {subtitle}
+        </Typography>
         <BigTitle>{title}</BigTitle>
       </TitleBox>
       <Box

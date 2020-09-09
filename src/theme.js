@@ -69,6 +69,9 @@ const theme = createMuiTheme({
           lineHeight: '60px',
         },
       },
+      text: {
+        padding: '0 4rem',
+      },
       contained: {
         padding: '0 40px',
         fontSize: '1.8rem',
@@ -78,6 +81,18 @@ const theme = createMuiTheme({
         },
         '@media (min-width: 1280px)': {
           fontSize: '2.2rem',
+        },
+      },
+      containedPrimary: {
+        color: '#1E0E0E',
+        '&:hover': {
+          color: '#BAB3B3',
+        },
+      },
+      containedSecondary: {
+        color: '#1E1212',
+        '&:hover': {
+          color: '#EEEEEE',
         },
       },
       label: {

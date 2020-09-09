@@ -10,7 +10,7 @@ const Pricing = ({ pricing }) => {
   ))
 
   const TitleBox = styled(Box)`
-    h3 {
+    h4 {
       margin-bottom: 2rem;
       text-align: center;
     }

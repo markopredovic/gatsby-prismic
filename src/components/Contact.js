@@ -18,10 +18,10 @@ const WrapperBox = styled(Box)``
 
 const ContentBox = styled(Box)`
   ${({ theme }) => `
-  h6 {
+  h3 {
     margin-bottom: 1.5rem;
   }
-  h3 {
+  h4 {
     margin-bottom: 2rem;
     text-align: center;
   }
@@ -30,7 +30,7 @@ const ContentBox = styled(Box)`
   }
 
   ${theme.breakpoints.up('md')} {
-    h3 {
+    h4 {
       text-align: left;
     }
     p {
@@ -106,7 +106,9 @@ const Contact = ({ contact: { title, subtitle, description, image } }) => {
         width={{ xs: '1', sm: '45%' }}
         order={{ xs: 2, sm: 1 }}
       >
-        <Typography variant="subtitle1">{subtitle}</Typography>
+        <Typography variant="subtitle1" component="h3">
+          {subtitle}
+        </Typography>
         <BigTitle>{title}</BigTitle>
         <Typography variant="body1">{description}</Typography>
         <Box display="flex" flexDirection="column" alignItems="center" mt={5}>

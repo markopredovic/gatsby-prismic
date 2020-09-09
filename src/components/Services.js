@@ -8,10 +8,10 @@ import BigTitle from './UI/BigTitle'
 import ServiceItem from './ServiceItem'
 
 const ContentBox = styled(Box)`
-  h6 {
+  h3 {
     margin-bottom: 1.5rem;
   }
-  h3 {
+  h4 {
     margin-bottom: 2rem;
     text-align: center;
   }
@@ -21,7 +21,7 @@ const ContentBox = styled(Box)`
   }
 
   @media (min-width: 960px) {
-    h3 {
+    h4 {
       text-align: left;
     }
     > p {
@@ -61,7 +61,9 @@ const Services = ({ services }) => {
         alignItems={{ xs: 'center', md: 'flex-start' }}
         order={{ xs: 2, sm: 1 }}
       >
-        <Typography variant="subtitle1">{services.mainSubtitle}</Typography>
+        <Typography variant="subtitle1" component="h3">
+          {services.mainSubtitle}
+        </Typography>
         <BigTitle>{services.mainTitle}</BigTitle>
         <Typography variant="body1">{services.mainDescription}</Typography>
         {servicesList}

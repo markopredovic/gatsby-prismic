@@ -44,10 +44,10 @@ const settings = {
 
 const TitleBox = styled(Box)`
   h3 {
+    margin-bottom: 2rem;
     text-align: center;
   }
-  h6 {
-    margin-bottom: 2rem;
+  h4 {
     text-align: center;
   }
 `
@@ -102,7 +102,9 @@ const Clients = ({ clients: { title, subtitle, items } }) => {
   return (
     <Box>
       <TitleBox mb={6}>
-        <Typography variant="subtitle1">{subtitle}</Typography>
+        <Typography variant="subtitle1" component="h3">
+          {subtitle}
+        </Typography>
         <BigTitle>{title}</BigTitle>
       </TitleBox>
       <StyledSlider {...settings} theme={theme}>

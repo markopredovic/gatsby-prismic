@@ -5,10 +5,10 @@ import styled from '@emotion/styled'
 import BigTitle from './UI/BigTitle'
 
 const ContentBox = styled(Box)`
-  h6 {
+  h3 {
     margin-bottom: 1.5rem;
   }
-  h3 {
+  h4 {
     margin-bottom: 2rem;
   }
   p {
@@ -17,7 +17,7 @@ const ContentBox = styled(Box)`
   }
 
   @media (min-width: 960px) {
-    h3 {
+    h4 {
       text-align: left;
     }
     > p {
@@ -43,7 +43,9 @@ const Sales = ({ sales }) => {
         alignItems={{ xs: 'center', md: 'flex-start' }}
         width={{ xs: '1', sm: '50%' }}
       >
-        <Typography variant="subtitle1">{sales.subtitle}</Typography>
+        <Typography variant="subtitle1" component="h3">
+          {sales.subtitle}
+        </Typography>
         <BigTitle>{sales.title}</BigTitle>
         <Typography variant="body1">{sales.description}</Typography>
         <Button variant="contained" color="secondary" href="#pricing">

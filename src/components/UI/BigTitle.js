@@ -24,7 +24,7 @@ const BigTitle = props => {
   const theme = useTheme()
 
   return (
-    <StyledBigTitle variant="h3" theme={theme}>
+    <StyledBigTitle variant="h3" component="h4" theme={theme}>
       {props.children}
     </StyledBigTitle>
   )

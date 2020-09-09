@@ -24,7 +24,7 @@ const PriceBoxTag = styled.div`
     lineHeight: '4rem',
     fontSize: '2rem',
     fontWeight: '600',
-    color: '#fff',
+    color: '#373737',
     textTransform: 'uppercase',
     backgroundColor: theme.palette.primary.light,
     borderRadius: '3rem',

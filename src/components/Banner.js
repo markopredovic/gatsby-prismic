@@ -8,11 +8,11 @@ import styled from '@emotion/styled'
 import BigTitle from './UI/BigTitle'
 
 const ContentBox = styled(Box)`
-  h6 {
+  h3 {
     margin-bottom: 1rem;
     text-align: center;
   }
-  h3 {
+  h4 {
     margin-bottom: 2rem;
     text-align: center;
   }
@@ -22,10 +22,10 @@ const ContentBox = styled(Box)`
   }
 
   @media (min-width: 960px) {
-    h6 {
+    h3 {
       text-align: left;
     }
-    h3 {
+    h4 {
       text-align: left;
     }
     p {
@@ -51,7 +51,9 @@ const Banner = ({ image, title, subtitle, text }) => {
         flexDirection="column"
         alignItems={{ xs: 'center', md: 'flex-start' }}
       >
-        <Typography variant="subtitle1">{subtitle.text}</Typography>
+        <Typography variant="subtitle1" component="h3">
+          {subtitle.text}
+        </Typography>
         <BigTitle>{title.text}</BigTitle>
         <Typography variant="body1">{text}</Typography>
         <Button

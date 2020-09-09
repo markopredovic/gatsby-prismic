@@ -193,7 +193,12 @@ const Footer = () => {
                       }
                       return (
                         <SocialBox key={i}>
-                          <Link to={item.social_url}>{icon}</Link>
+                          <Link
+                            to={item.social_url}
+                            aria-label={item.social_type}
+                          >
+                            {icon}
+                          </Link>
                         </SocialBox>
                       )
                     })}
