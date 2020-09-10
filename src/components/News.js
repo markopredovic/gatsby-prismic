@@ -30,7 +30,6 @@ const PostBox = styled(Box)`
     },
 
     span: {
-      marginBottom: '2rem',
       textAlign: 'center',
       fontSize: '2.4rem',
       fontWeight: '600',
