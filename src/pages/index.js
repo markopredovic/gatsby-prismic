@@ -1,17 +1,28 @@
 import React from 'react'
+import loadable from '@loadable/component'
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import { Container, Box } from '@material-ui/core'
 
-import Layout from '../components/layout'
-import Banner from '../components/Banner'
-import Features from '../components/Features'
-import Services from '../components/Services'
-import Sales from '../components/Sales'
-import Pricing from '../components/Pricing'
-import Clients from '../components/Clients'
-import News from '../components/News'
-import Contact from '../components/Contact'
+// import Layout from '../components/layout'
+// import Banner from '../components/Banner'
+// import Features from '../components/Features'
+// import Services from '../components/Services'
+// import Sales from '../components/Sales'
+// import Pricing from '../components/Pricing'
+// import Clients from '../components/Clients'
+// import News from '../components/News'
+// import Contact from '../components/Contact'
+
+const Layout = loadable(() => import('../components/layout'))
+const Banner = loadable(() => import('../components/Banner'))
+const Features = loadable(() => import('../components/Features'))
+const Services = loadable(() => import('../components/Services'))
+const Sales = loadable(() => import('../components/Sales'))
+const Pricing = loadable(() => import('../components/Pricing'))
+const Clients = loadable(() => import('../components/Clients'))
+const News = loadable(() => import('../components/News'))
+const Contact = loadable(() => import('../components/Contact'))
 
 const IndexPage = ({ data }) => {
   const bannerData = {

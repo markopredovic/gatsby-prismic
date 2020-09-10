@@ -5,7 +5,6 @@ import styled from '@emotion/styled'
 import BigTitle from './UI/BigTitle'
 import { grey } from '@material-ui/core/colors'
 import { useTheme } from '@material-ui/core/styles'
-import { purple } from '@material-ui/core/colors'
 
 const TitleBox = styled(Box)`
   h3 {
@@ -30,7 +29,7 @@ const PostBox = styled(Box)`
       marginBottom: '0',
     },
 
-    h6: {
+    span: {
       marginBottom: '2rem',
       textAlign: 'center',
       fontSize: '2.4rem',
@@ -95,7 +94,9 @@ const News = ({ news: { title, subtitle, items } }) => {
                 alt="post image"
               />
             </Box>
-            <Typography variant="subtitle2">{post.post_title.text}</Typography>
+            <Typography variant="subtitle2" component="span">
+              {post.post_title.text}
+            </Typography>
             <Typography variant="body1">{post.post_excerpt}</Typography>
             <StyledButton variant="text" theme={theme}>
               Read More
