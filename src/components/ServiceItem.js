@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Box,
   Typography,
@@ -42,12 +42,13 @@ const ServiceAccordion = styled(Accordion)`
 
 const ServiceItem = ({ service_description, service_title, index }) => {
   const theme = useTheme()
+  const [isExpanded, SetExpanded] = useState(false)
 
   return (
     <Box>
-      <ServiceAccordion theme={theme}>
+      <ServiceAccordion theme={theme} onChange={() => SetExpanded(!isExpanded)}>
         <AccordionSummary
-          expandIcon={<AddIcon />}
+          expandIcon={!isExpanded ? <AddIcon /> : <RemoveIcon />}
           aria-controls={`panel${index}a-content`}
           id={`panel${index}a-header`}
         >

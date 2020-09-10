@@ -74,7 +74,7 @@ const StyledSlider = styled(Slider)`
       zIndex: '9',
       '&:before': {
         fontSize: '3rem',
-        color: theme.palette.primary.light,
+        color: theme.palette.primary.dark,
       },
       [theme.breakpoints.up('md')]: {
         '&:before': {
@@ -88,10 +88,10 @@ const StyledSlider = styled(Slider)`
       },
     },
     '.slick-prev': {
-      left: '0',
+      left: '1rem',
     },
     '.slick-next': {
-      right: '0',
+      right: '1rem',
     },
   })}
 `

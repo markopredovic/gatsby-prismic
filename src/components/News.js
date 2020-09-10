@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import BigTitle from './UI/BigTitle'
 import { grey } from '@material-ui/core/colors'
 import { useTheme } from '@material-ui/core/styles'
+import { purple } from '@material-ui/core/colors'
 
 const TitleBox = styled(Box)`
   h3 {
@@ -45,6 +46,12 @@ const PostBox = styled(Box)`
       fontWeight: '600',
     },
   })}
+`
+
+const StyledButton = styled(Button)`
+  ${({ theme }) => `
+    color: ${theme.palette.primary.dark}
+  `}
 `
 
 const StyledBackgroundImage = styled(BackgroundImage)`
@@ -90,9 +97,9 @@ const News = ({ news: { title, subtitle, items } }) => {
             </Box>
             <Typography variant="subtitle2">{post.post_title.text}</Typography>
             <Typography variant="body1">{post.post_excerpt}</Typography>
-            <Button variant="text" color="primary">
+            <StyledButton variant="text" theme={theme}>
               Read More
-            </Button>
+            </StyledButton>
           </PostBox>
         ))}
       </Box>
