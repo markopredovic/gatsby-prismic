@@ -10,4 +10,4 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
       devtool: false,
     })
   }
-}a
+}
