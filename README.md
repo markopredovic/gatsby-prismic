@@ -7,6 +7,7 @@
 - [Material Ui](https://material-ui.com/) framework,
 - [Emotion](https://emotion.sh/docs/introduction) styled components
 - High performance optimization
+- [Netlify](https://www.netlify.com/) host
 
 ### Demo
 
