@@ -17,6 +17,8 @@ const useStyles = makeStyles({
 const Menu = props => {
   const classes = useStyles()
 
+  console.log('arial label', props['aria-label'])
+
   return (
     <List {...props}>
       <ListItemLink href="#home">

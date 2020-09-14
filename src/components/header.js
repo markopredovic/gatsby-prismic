@@ -41,6 +41,18 @@ const Header = () => {
 
   const toggleMenu = () => setOpened(!opened)
 
+  const collapseMenu = e => {
+    console.log('e.target.className', e.target.className)
+    if (
+      e.target.className !== 'MuiCollapse-wrapperInner' &&
+      e.target.className.indexOf('MuiBox-root') < 0
+    ) {
+      setTimeout(() => {
+        setOpened(false)
+      }, 700)
+    }
+  }
+
   return (
     <AppBar color="default" position="sticky">
       <Container>
@@ -78,7 +90,7 @@ const Header = () => {
           </Box>
         </Toolbar>
         <Box display={{ xs: 'block', md: 'none' }}>
-          <Collapse in={opened}>
+          <Collapse in={opened} onClick={collapseMenu}>
             <Menu
               component="nav"
               aria-label="main"
